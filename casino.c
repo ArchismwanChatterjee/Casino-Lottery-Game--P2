@@ -1,13 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <conio.h>
+#include <windows.h>
 int main()
 {
     srand(time(0));
     int age;
-
+    void gotoxy(int x, int y)
+    {
+        COORD c;
+        c.X = x;
+        c.Y = y;
+        SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
+    }
+    gotoxy(50, 10);
     printf("WELCOME to the CASINO \n");
+    getch();
     printf("RULES : \n 1. ABOVE 20 Yrs of AGE \n 2. YOUR BALANCE MUST BE GREATER THAN YOUR BID \n 3.THE NUMBER ON THE SCREEN IS GENERATED RANDOMLY \n 4.EACH TOKEN IS VALUED AT RS.1\n 5.MAINTAIN CODE OF CONDUCT \n");
+
     printf("\nKindly please enter your age\n");
     scanf("%d", &age);
 
@@ -24,7 +35,7 @@ int main()
         {
         case 1:
 
-            printf(" THE CONDITIONS ARE");
+            printf(" THE CONDITIONS ARE \n");
             printf("\n 999 : JACKPOT \n 000 : LOST COMPLETELY \n XXX : THREE TIMES BID \n AXX : TWO TIMES BID \n ALL ODD : DRAW \n ALL EVEN : DRAW \n OTHERWISE LOST YOUR BID \n");
             break;
         case 2:
@@ -180,7 +191,6 @@ int main()
 
                 else // Donot want to play
                 {
-
                     break;
                 }
 
@@ -188,20 +198,25 @@ int main()
 
         } // end of while loop
 
-        printf("\n House balance is Rs %d and Player balance is Rs  %d", hb, pb);
-        printf("\n Thank you for visiting");
+        printf(" House balance is Rs %d and Player balance is Rs  %d", hb, pb);
+        printf("\n Thank you for visiting \n");
+        gotoxy(80, 10);
+        printf("DEVELOPED BY ARCHISMWAN CHATTERJEE \n");
+        getch();
 
     } // end of if(age verification)
 
     else // end of outermost else(age verification)
     {
-        printf(" \n You must be 21 yrs and above to play");
+        printf(" You must be 21 yrs and above to play \n");
+        gotoxy(80, 10);
+        printf("DEVELOPED BY ARCHISMWAN CHATTERJEE \n");
     }
 
     return 0;
 }
 /*
-WELCOME to the CASINO
+                                               WELCOME to the CASINO
 RULES :
  1. ABOVE 20 Yrs of AGE
  2. YOUR BALANCE MUST BE GREATER THAN YOUR BID
@@ -256,7 +271,56 @@ Enter '1' to confirm participation otherwise 0
 0
 
  House balance is Rs 9400 and Player balance is Rs 2200
- Thank you for visiting
- DEVELOPED BY ARCHISMWAN CHATTERJEE
- 
- */
+ Thank you for visiting                                                        DEVELOPED BY ARCHISMWAN CHATTERJEE
+
+*/
+/* OUTPUT 2
+WELCOME to the CASINO
+RULES :
+ 1. ABOVE 20 Yrs of AGE
+ 2. YOUR BALANCE MUST BE GREATER THAN YOUR BID
+ 3.THE NUMBER ON THE SCREEN IS GENERATED RANDOMLY
+ 4.EACH TOKEN IS VALUED AT RS.1
+ 5.MAINTAIN CODE OF CONDUCT
+
+Kindly please enter your age
+23
+Do you want to go through the gaming conditions
+ 1 for yes and 0 for no
+1
+ THE CONDITIONS ARE
+ 999 : JACKPOT
+ 000 : LOST COMPLETELY
+ XXX : THREE TIMES BID
+ AXX : TWO TIMES BID
+ ALL ODD : DRAW
+ ALL EVEN : DRAW
+ OTHERWISE LOST YOUR BID
+
+Your balance is zero
+ You have two options
+ 1.Buy tokens    2.Quit Game
+1
+ Enter the amount of tokens you want to buy
+1000
+Enter the price
+1500
+
+ Will we convert Rs. 500 to tokens or will return the amount to you
+ Enter 1 to convert to token and 0 to receive change
+ 1
+Enter '1' to confirm participation otherwise 0
+1
+ENter bid value
+100
+
+ number : 999
+CONGRATULATIONs FOR JACKPOT
+
+ Your balance is Rs 11500 and house balance is Rs 0
+
+ GAME ENDS
+ House balance is Rs 0 and Player balance is Rs  11500
+ Thank you for visiting                                                        DEVELOPED BY ARCHISMWAN CHATTERJEE
+
+*/
