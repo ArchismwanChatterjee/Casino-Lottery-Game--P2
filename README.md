@@ -1,4 +1,5 @@
 # Casino-Lottery-Game--P2
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
 # Project based on Lottery Games in the Casino's using C language
 
 # The user must know and follow these rules:
